@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Playfair_Display, Inter } from "next/font/google";
-import { HeroUIProvider } from "@heroui/react";
+
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Sections/home/footer/Footer";
 import Head from "next/head";
 import Loading from "@/app/loading";
 import { Suspense } from "react";
+
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -39,7 +40,7 @@ export default function RootLayout({
     <html lang="en">
   
       <body className={`${playfair.variable} ${inter.variable}`}>
-         <Navbar/>
+       
         <Suspense fallback={<Loading/>}>{children}</Suspense>
         
        
